@@ -6,12 +6,14 @@ public class School {
 
     private List<Teacher> teachers;
     private List<Student> students;
-    private  int totalMoneyEarned = 0 ;
-    private  int totalMoneySpent;
+    private static int totalMoneyEarned;
+    private static int totalMoneySpent;
 
     public School(List<Teacher> teacher, List<Student> student) {
         this.teachers = teacher;
         this.students = student;
+        totalMoneyEarned=0;
+        totalMoneySpent=0;
     }
 
     public List<Teacher> getTeacher() {
@@ -37,8 +39,10 @@ public class School {
         return totalMoneyEarned;
     }
   // using concat operator because it  will add all the money earned by the school
-    public void setTotalMoneyEarned(int totalMoneyEarned) {
-        this.totalMoneyEarned += totalMoneyEarned;
+
+
+    public static void updateTotalMoneyEarned(int totalMoneyEarned) {
+        School.totalMoneyEarned = totalMoneyEarned;
     }
 
     public int getTotalMoneySpent() {
@@ -49,8 +53,8 @@ public class School {
     // the money spent , this function will update it
     // will keep track of the teacher salary.
 
-    public void updateTotalMoneySpent(int totalMoneySpent) {
+    public static void updateTotalMoneySpent(int totalMoneySpent) {
 
-      int updatetotalMoneySpent = totalMoneySpent;
+      School.totalMoneySpent -= totalMoneySpent;
     }
 }
