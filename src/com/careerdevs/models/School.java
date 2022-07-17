@@ -49,8 +49,8 @@ public class School {
     // the money spent , this function will update it
     // will keep track of the teacher salary.
 
-    public void setTotalMoneySpent(int totalMoneySpent) {
+    public void updateTotalMoneySpent(int totalMoneySpent) {
 
-        this.totalMoneySpent -= totalMoneySpent;
+      int updatetotalMoneySpent = totalMoneySpent;
     }
 }
