@@ -1,6 +1,8 @@
 package com.careerdevs.models;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class School {
 
@@ -42,7 +44,7 @@ public class School {
 
 
     public static void updateTotalMoneyEarned(int totalMoneyEarned) {
-        School.totalMoneyEarned = totalMoneyEarned;
+        School.totalMoneyEarned += totalMoneyEarned;
     }
 
     public int getTotalMoneySpent() {
@@ -56,5 +58,9 @@ public class School {
     public static void updateTotalMoneySpent(int totalMoneySpent) {
 
       School.totalMoneySpent -= totalMoneySpent;
+    }
+    public String moneyFormat(int money){
+       String currencyForSchool =  NumberFormat.getCurrencyInstance(Locale.US).format(money);
+       return currencyForSchool;
     }
 }
